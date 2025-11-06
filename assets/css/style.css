@@ -1135,19 +1135,3 @@ hr {
 ---------  blog details PAGE CSS END --------
 -----------------------------------*/
 
-/*--------------------------------------
--------- Pre Loader Style START --------
----------------------------------------*/
-#preloader {
-  position: fixed;
-  z-index: 99999999999;
-  top: 0;
-  left: 0;
-  overflow: visible;
-  width: 100%;
-  height: 100%;
-  background: #fff url("../img/loader.gif") no-repeat center center;
-}
-/*--------------------------------------
---------- Pre Loader Style END ---------
----------------------------------------*/
