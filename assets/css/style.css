@@ -285,15 +285,102 @@ input::-webkit-input-placeholder {
 	margin-right: 30px;
 	padding: 3px 0;
 }
-.slicknav_menu {
-	padding: 0;
-    background: transparent;
+.responsive-menu {
+	display: none;
 }
 .mainmenu {
     display: block;
 }
-.slicknav_menu {
-	display: none;
+.af-mobile-menu {
+	position: relative;
+	display: inline-block;
+}
+.af-menu-toggle {
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+	border-radius: 4px;
+	padding: 7px 11px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+.af-menu-toggle-bars {
+	display: inline-block;
+	width: 14px;
+	height: 2px;
+	background: #fff;
+	position: relative;
+}
+.af-menu-toggle-bars::before,
+.af-menu-toggle-bars::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 14px;
+	height: 2px;
+	background: #fff;
+}
+.af-menu-toggle-bars::before {
+	top: -5px;
+}
+.af-menu-toggle-bars::after {
+	top: 5px;
+}
+.af-mobile-nav {
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 10;
+	width: 260px;
+	background: #000;
+	border: 2px solid #fff;
+	padding: 10px;
+	margin-top: 8px;
+	text-align: left;
+}
+.af-mobile-nav-list li {
+	display: block;
+	position: relative;
+}
+.af-mobile-nav-list li a {
+	display: block;
+	margin: 0;
+	padding: 8px 10px;
+}
+.af-mobile-nav-list li a:not(.theme-btn) {
+	border: 1px solid transparent;
+}
+.af-mobile-nav-list li a:hover {
+	color: #fff;
+	background: transparent;
+}
+.af-mobile-nav-list li ul {
+	position: static;
+	transform: none;
+	min-width: 0;
+	padding: 5px 0 0 14px;
+	border-left: 1px solid #2d2d2d;
+	background: transparent;
+}
+.af-mobile-nav-list li ul li a {
+	padding: 6px 10px;
+}
+.af-mobile-nav-list .af-has-submenu > a {
+	padding-right: 38px;
+}
+.af-submenu-toggle {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+	width: 24px;
+	height: 24px;
+	line-height: 20px;
+	text-align: center;
+	padding: 0;
 }
 .header.sticky {
 	border-bottom: 1px solid #fff;
@@ -1135,3 +1222,182 @@ hr {
 ---------  blog details PAGE CSS END --------
 -----------------------------------*/
 
+/*----------------------------------
+------ MODERNIZATION UPDATES -------
+-----------------------------------*/
+:root {
+    --af-bg: #13151f;
+    --af-surface: #1e2233;
+    --af-soft-surface: #23263a;
+    --af-text: #ffffff;
+    --af-muted: #b6b7b9;
+    --af-accent: #eb315a;
+    --af-accent-soft: rgba(235, 49, 90, 0.2);
+}
+
+body[data-accent="teal"] {
+    --af-accent: #14b8a6;
+    --af-accent-soft: rgba(20, 184, 166, 0.22);
+}
+
+body {
+    background: var(--af-bg);
+    color: var(--af-muted);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--af-text);
+}
+
+a,
+a:hover {
+    color: var(--af-text);
+}
+
+.theme-btn {
+    background: var(--af-accent);
+    border-color: var(--af-accent);
+}
+
+.theme-btn:hover {
+    border-color: var(--af-accent);
+    color: var(--af-accent);
+}
+
+.mainmenu li a.active,
+.mainmenu li a:hover,
+.section-title h1 i,
+.news-content h2:hover,
+.portfolio-content > h2:hover,
+.single-video:hover h2,
+.single-news:hover h2,
+.single-portfolio:hover h2 {
+    color: var(--af-accent);
+}
+
+.portfolio-menu li.active,
+.portfolio-menu li:hover {
+    border-color: var(--af-accent);
+    color: var(--af-accent);
+}
+
+.owl-dot.active {
+    background: var(--af-accent);
+}
+
+.single-portfolio,
+.single-news,
+.single-video {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.single-portfolio:hover,
+.single-news:hover,
+.single-video:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.search-status {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--af-muted);
+    min-height: 18px;
+}
+
+.portfolio-controls {
+    margin-bottom: 20px;
+}
+
+.favorites-filter,
+.favorite-btn,
+.accent-toggle {
+    border: 1px solid var(--af-accent);
+    background: transparent;
+    color: var(--af-text);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    line-height: 1.4;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.favorites-filter:hover,
+.favorite-btn:hover,
+.accent-toggle:hover,
+.favorites-filter.active,
+.favorite-btn.active,
+.accent-toggle:focus {
+    background: var(--af-accent-soft);
+    color: var(--af-text);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.favorite-btn {
+    margin-top: 12px;
+}
+
+.single-portfolio.is-favorite {
+    box-shadow: 0 0 0 2px var(--af-accent-soft);
+}
+
+.header-right ul li .accent-toggle {
+    margin-top: 2px;
+}
+
+.header-right input[type="text"] {
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-right input[type="text"]:focus {
+    border-color: var(--af-accent);
+    box-shadow: 0 0 0 3px var(--af-accent-soft);
+}
+
+.js .scrollToTop {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+}
+
+.js .scrollToTop.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.recent-trailers-widget {
+    margin: 24px 0 8px;
+    padding: 16px 18px;
+    border: 1px solid var(--af-accent-soft);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.recent-trailers-widget h4 {
+    margin-bottom: 10px;
+}
+
+.recent-trailers-widget ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recent-trailers-widget ul li a {
+    display: inline-block;
+    border: 1px solid var(--af-accent-soft);
+    border-radius: 18px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--af-text);
+}
+
+.recent-trailers-widget ul li a:hover {
+    background: var(--af-accent-soft);
+}

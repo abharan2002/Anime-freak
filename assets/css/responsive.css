@@ -89,25 +89,12 @@
 	.mainmenu {
 		display: none;
 	}
-	.responsive-menu,
-	.slicknav_menu {
+	.responsive-menu {
 		display: block;
+		text-align: right;
 	}
-	ul.slicknav_nav {
-		position: absolute;
-		background: #000;
-		right: 10px;
-		top: 100%;
-		z-index: 9;
-		border: 2px solid #fff;
-		padding: 10px;
-		margin-top: 8px;
-	}
-	.slicknav_nav .slicknav_row:hover {
-		-webkit-border-radius: 0;
-		-moz-border-radius: 0;
-		border-radius: 0;
-		background: transparent;
+	.af-mobile-menu {
+		display: inline-block;
 	}
 	.menu-area li a > i {
 		display: none;
@@ -115,22 +102,8 @@
 	.menu-area {
 		position: relative;
 	}
-	.slicknav_menu .slicknav_menutxt {
-		display: none;
-	}
-	.slicknav_menu .slicknav_icon {
-		margin: 0;
-	}
-	.slicknav_nav a {
-		border: 1px solid transparent;
-	}
-	.slicknav_nav a:hover {
-		background: transparent;
-		border-radius: 0;
-		color: #fff;
-	}
-	.slicknav_nav .theme-btn:hover {
-		border-radius: 35px;
+	.af-mobile-nav {
+		right: 10px;
 	}
 	.hero-area-thumb,.news-thumb {
 		display: none;
@@ -201,7 +174,7 @@
 	.mtr-30 {
 		margin-top: 30px;
 	}
-	.slicknav_nav a.theme-btn {
+	.af-mobile-nav a.theme-btn {
     text-align: center;
 }
 

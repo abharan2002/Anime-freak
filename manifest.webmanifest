@@ -1,0 +1,23 @@
+{
+  "name": "Anime Freak",
+  "short_name": "AnimeFreak",
+  "description": "Anime Freak app for anime movies, trailers, and news.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#13151f",
+  "theme_color": "#13151f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/favcion.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/favcion.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
